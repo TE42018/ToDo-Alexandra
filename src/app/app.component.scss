@@ -1,0 +1,21 @@
+
+.header{
+    text-align: center;
+    background-color:darkslategrey;
+    width: 100%;
+    height: 100px;;
+    padding-top: 15px;
+    color: white;
+    border-bottom: 3px  blue solid;
+}
+
+.tasks{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+.body{
+    text-align: center;
+}
