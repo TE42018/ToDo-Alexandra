@@ -5,8 +5,11 @@
 
 <div class="body">
   <app-input></app-input>
+  <div class="tasks">
+ 
   <div *ngFor="let todo of todoService.getTodos()">
     <app-todo-item [todo]= "todo"></app-todo-item>
   </div>
+</div>
 </div>
 <router-outlet></router-outlet>

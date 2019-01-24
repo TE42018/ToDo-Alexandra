@@ -1,6 +1,10 @@
 .todoWrapper {
+    width: 250px;
+    height: 200px;
     text-align: center;
     padding: 5px;
+    border: 2px blue solid;
+    position: relative;
 }
 
 .removeTodo{
@@ -13,4 +17,7 @@
     color: red;
     border-color: red;
     background-color: transparent;
+    position: absolute;
+    bottom: 7px;;
+    left: 7px;;
 }

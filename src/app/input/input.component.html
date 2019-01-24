@@ -1,5 +1,22 @@
 <div class="input-wrapper">
+  <input type="text" [(ngModel)]= "titelText" value= {{titelText}}/>
   <input type="text" [(ngModel)]="todoText" value = {{todoText}}/>
+  <select>
+    <option disabled selected>
+      State 
+  </option>
+  <option>
+    To Do
+  </option>
+  <option>
+    In Progress
+  </option>
+  <option>
+    Done
+  </option>
+</select>
+  <div class="submit">
   <button class="btn btn-first" (click)="addTodo()">Submit</button>
+</div>
 </div>
 

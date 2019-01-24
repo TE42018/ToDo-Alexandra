@@ -1,20 +1,38 @@
-input{
-    width: 60%;
-    padding: 10px;
-    line-height: 18px;
+.input-wrapper{
+    width: 100%;
+    line-height: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 15px;
+    
+    input {
+        width: 50%;
+        border-radius: 7px 0 0 7px;
+        border: 1px darkslategray solid;
+    }
+    input:focus{
+        
+        outline: none;
+    }
+}
+
+
+.submit{
+
 }
 
 .btn{
     outline: none;
     box-shadow: none;
-    border-width: 2px;
-    border-radius: 3px;
+    border-width: 1px;
+    border-radius: 0 7px 7px 0;
     border-style: solid;
     padding: 10px;
 }
 
 .btn-first{
-    color: lightseagreen;
-    border-color: lightseagreen;
+    color:darkslategray;
+    border-color: darkslategray;
     background-color: transparent;
 }
