@@ -1,36 +1,37 @@
 import { Injectable } from '@angular/core';
-import { Todo } from '../classes/todo';
+import { Todo, TaskState } from '../models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
 
-  private todos: Todo[];
-  private nextId: number;
+  todos: Todo[];
+  nextId: number;
+  state: TaskState;
 
   constructor() {
     this.todos = [
-      new Todo(0, "Todo1"),
-      new Todo(1, "Todo2")
+      { id: 0, title: 'Köpa mat', text: 'Köp mjölk, smör och majs', state: TaskState.todo },
+      { id: 1, title: 'Mata Djuren', text: 'Mata katten, hunden och kossan', state: TaskState.inProgress},
     ];
 
     this.nextId = 2;
   }
 
-  public addTodo(text: string): void {
-    let todo = new Todo(this.nextId, text);
-    this.todos.push(todo);
+  public addTodo(task: Todo): void {
+    task.id = this.nextId;
+    this.todos.push({...task});
     this.nextId++;
   }
 
 
-  public getTodos(): Todo[]{
+  public getTodos(): Todo[] {
     return this.todos;
-  } 
+  }
 
-  public removeTodo(id:number): void {
-    this.todos = this.todos.filter((todo) => todo.id != id);
+  public removeTodo(id: number): void {
+    this.todos = this.todos.filter((todo) => todo.id !== id);
 
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Todo } from '../classes/todo';
+import { Todo } from '../models';
 import { TodoService } from '../services/todo.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class TodoItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  private removeTodo(): void {
+  public removeTodo(): void {
     this.todoService.removeTodo(this.todo.id);
   }
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TodoService } from './services/todo.service';
-import { Todo } from './classes/todo';
+import { Todo } from './models';
+
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ import { Todo } from './classes/todo';
 })
 export class AppComponent {
   title = 'My ToDo List';
-  constructor (private todoService: TodoService){}
+
+  constructor(private todoService: TodoService) { }
 }
- 
+

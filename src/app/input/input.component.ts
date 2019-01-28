@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../services/todo.service';
+import { TaskState, Todo } from '../models';
 
 @Component({
   selector: 'app-input',
@@ -8,18 +9,19 @@ import { TodoService } from '../services/todo.service';
 })
 export class InputComponent implements OnInit {
 
-  private todoText: string;
+  todo: Todo;
 
-  constructor(private todoService: TodoService) { 
-    this.todoText = '';
+  states = [TaskState.todo, TaskState.inProgress, TaskState.done];
+
+  constructor(private todoService: TodoService) {
+    this.todo = {text: '', title: '', state: TaskState.todo};
   }
 
   ngOnInit() {
   }
 
-  private addTodo(): void {
-    this.todoService.addTodo(this.todoText);
-    this.todoText = '';
+  public addTodo(): void {
+    this.todoService.addTodo(this.todo);
   }
 
 }

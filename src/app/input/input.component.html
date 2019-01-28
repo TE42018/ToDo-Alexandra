@@ -1,22 +1,15 @@
 <div class="input-wrapper">
-  <input type="text" [(ngModel)]= "titelText" value= {{titelText}}/>
-  <input type="text" [(ngModel)]="todoText" value = {{todoText}}/>
-  <select>
-    <option disabled selected>
-      State 
-  </option>
-  <option>
-    To Do
-  </option>
-  <option>
-    In Progress
-  </option>
-  <option>
-    Done
-  </option>
-</select>
+  <input type="text" [(ngModel)]="todo.title" />
+  <input type="text" [(ngModel)]="todo.text" />
+  <select [(ngModel)]="todo.state"> 
+    <option disabled selected [value]="''">
+    State
+    </option>
+    <option *ngFor="let state of states" [value]="state">
+      {{state}}
+    </option>
+  </select>
   <div class="submit">
-  <button class="btn btn-first" (click)="addTodo()">Submit</button>
+    <button class="btn btn-first" (click)="addTodo()">Submit</button>
+  </div>
 </div>
-</div>
-

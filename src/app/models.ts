@@ -1,8 +1,13 @@
 
-
-export interface Task{
+export interface Todo {
+    id?: number;
     title: string;
-    description: string;
-    deadline: Date;
-    state: 'To Do'| 'In Progress'| 'Done';
-  }
+    text: string;
+    state: TaskState;
+}
+
+export enum TaskState {
+    todo = 'To Do',
+    inProgress = 'In Progress',
+    done =  'Done',
+}
